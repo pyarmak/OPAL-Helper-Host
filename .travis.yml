@@ -4,10 +4,10 @@ language: go
 
 go:
 - tip # The latest version of Go.
-
-branches:
-  only:
-  - master
+#
+#branches:
+#  only:
+#  - master
 
 install:
 - wget http://s.sudre.free.fr/Software/files/Packages.dmg
