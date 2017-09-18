@@ -34,5 +34,5 @@ deploy:
   artifact: binary # This is the name we specified in the artifacts section.
   draft: false
   prerelease: false
-#  on:
-#    appveyor_repo_tag: true
+  on:
+    appveyor_repo_tag: true
