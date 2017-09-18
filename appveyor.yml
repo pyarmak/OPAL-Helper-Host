@@ -1,0 +1,38 @@
+platform: x64
+
+branches:
+  only:
+    - master
+
+clone_folder: c:\gopath\src\github.com\pyarmak\OPAL-Helper-Host
+
+environment:
+  GOPATH: c:\gopath
+
+install:
+  - echo %PATH%
+  - echo %GOPATH%
+  - choco install -y InnoSetup
+  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%;"C:\Program Files (x86)\Inno Setup 5"
+  - go version
+  - go env
+
+build_script:
+  - go build -o "build\windows\bin\OPALhelper.exe" src\chrome_native.go src\ffmpeg.go src\main.go
+
+after_build:
+  - iscc setup.iss
+
+artifacts:
+  - path: dist\SetupOPALHelper.exe
+    name: binary
+
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: AKVf1sttIiuJZrGc1G2TNYgo+P9yem/dniy0GVJIabOanHgY/jbD6f9A4uvwdzLa
+  artifact: binary # This is the name we specified in the artifacts section.
+  draft: false
+  prerelease: false
+#  on:
+#    appveyor_repo_tag: true
