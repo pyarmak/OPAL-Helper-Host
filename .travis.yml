@@ -1,0 +1,30 @@
+os: osx
+
+language: go
+
+go:
+- tip # The latest version of Go.
+
+branches:
+  only:
+  - master
+
+install:
+- wget http://s.sudre.free.fr/Software/files/Packages.dmg
+- hdiutil attach Packages.dmg
+- sudo installer -pkg "/Volumes/Packages 1.1.3/Install Packages.pkg" -target "/"
+
+script:
+- go build -o "build/mac/bin/OPALhelper" src/chrome_native.go src/ffmpeg.go src/main.go
+
+before_deploy:
+- /usr/local/bin/packagesbuild -F . "OPAL Helper Host Application.pkgproj"
+
+deploy:
+  provider: releases
+  skip_cleanup: true # Important, otherwise the build output would be purged.
+  file: "dist/OPAL Helper Host Application.pkg"
+  api_key:
+    secure: "iWETpCNSoVgc6Q4+dYbs9tlMX9xTvlXNxrwX2ME+gGsvF7gxtsjrGndmHabgt+b/hD8is6cnigZneYgPBD+jmEVYtMTMGns+T8QSdzCIg3oFi5fe6VCvSVbB/OstBekwFVQ/F07hzLqjbDndR7t7gyo7vXQFAoy8P2c6eD2yV+sTOnrSBHIO+rD1EQMjyCjaxd4G6cdtU1OlGefjmavw9K2h0S/x4D2IqpiEtIOgT7fWh+cGhBWrDWes6qFL3XssGATDnK3IMWG6zsidmKVghTD0TED90iIUPPAph12Iv0bvs/bLa0nrFu3bRXNzwqP3AtBi+zHjDhgAIrjULDqYHk/WFCUdBwQsPIq/v8qvzCwq0V9OH9iQitZf4Fl4Wtu02jqXD3FLIW5JnIF35c/nEmREjBj2Gv3dCQgr2yAKFVJrKp7E6cSzqI8brbmJJFxk7+Gj580cbUAKRHyt2K+oU2qEvVdlGldzWRTqn7sEPJ7UnEoiI9MbUUxGxMDo6ODdJ1NnokR3Bl8zpLfhmnlDltmOPQnkNTuxKAvbzszezvNds5illvhrqhvATSOvEWivQciHxIiDJBbSvDh65i1VrovGqUKtp/vpk05mFmcspvDslrrLeoHhkRPZW3odKFTr9LCOoZKt7W6Y7LF6ap1VLRHmmvbnoID5jpZlnsSU5Us="
+  on:
+    repo: pyarmak/OPAL-Helper-Host

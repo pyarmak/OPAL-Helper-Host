@@ -1,0 +1,4 @@
+\.idea/
+dist/
+build/**/bin
+.DS_Store
