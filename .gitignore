@@ -2,3 +2,7 @@
 dist/
 build/**/bin
 .DS_Store
+.jekyll-metadata
+.sass-cache/
+node_modules/
+_site/

@@ -1,0 +1,30 @@
+{
+  "name": "opal-helper-host-website",
+  "version": "1.0.0",
+  "description": "Jekyll website for the OPAL Helper application.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pyarmak/OPAL-Helper-Host.git"
+  },
+  "keywords": [
+    "jekyll",
+    "gh-pages",
+    "opal"
+  ],
+  "author": "Pavel Yarmak",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/pyarmak/OPAL-Helper-Host/issues"
+  },
+  "homepage": "https://github.com/pyarmak/OPAL-Helper-Host#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.3",
+    "lodash": "^4.17.4"
+  }
+}
