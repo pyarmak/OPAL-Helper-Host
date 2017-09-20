@@ -1,0 +1,9 @@
+title: OPAL Helper
+description: Augmenting Max Rady College of Medicine's OPAL
+author: Pavel Yarmak
+author_url: http://pavel.yarmak.me/
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-cayman
+exclude: [node_modules, gulpfile.js]
+repository: pyarmak/OPAL-Helper-Host

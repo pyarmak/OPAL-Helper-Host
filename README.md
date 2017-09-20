@@ -1,4 +1,6 @@
 # OPAL Helper Host Application
+[![Build Status](https://travis-ci.org/pyarmak/OPAL-Helper-Host.svg?branch=master)](https://travis-ci.org/pyarmak/OPAL-Helper-Host)
+[![Build status](https://ci.appveyor.com/api/projects/status/r4cjnllk80evhhhx/branch/master?svg=true)](https://ci.appveyor.com/project/pyarmak/opal-helper-host/branch/master)
 
 __*Created by [Pavel Yarmak](http://pavel.yarmak.me/)*__
 
