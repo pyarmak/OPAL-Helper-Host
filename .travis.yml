@@ -17,10 +17,18 @@ before_deploy:
 - /usr/local/bin/packagesbuild -F . "OPAL Helper Host Application.pkgproj"
 
 deploy:
-  provider: releases
+- provider: releases
   skip_cleanup: true # Important, otherwise the build output would be purged.
   file: "dist/OPALHelperInstaller.pkg"
   api_key:
+    secure: "mUdL4JeQW2ihqE3nIGESJtvRhs/dp1tsy+sfq20KPv23XW3HERHGCqLBdggsl0fElozmRzCvXJd86zWzOLH0KVQWgN4nnpREhxJvqoZgCTxKyb5egSepgUHOO4D5BEV+u2UJoltD7j999CumyHDaOl6UYDMBmeYPgOVKkXqdZHE4xe3jD4fxnKfSDOOIugVsnzUctId40lR3PZjqaiuPX57tbNtHDPa90J94a9nWN9pbBSQk0Q2sr/T+VcjMud7g+hD/FGgOcUcCWPV1eCTXbsIk3xZOr/OwB3sUc8TgXStK5H1LSrEdkIJiX5mrFhX+0CjfQS+tWtBswKS3JKnSe0i2g6KQ823cmkCotw0zOgwyBqx3mbluTQDpMe4HIpVWUbZ4KNy6BpurOuDe1/CsPWJ9wgzLU7MpvIlyqpl4UiPK7fPRo7/qK4w2EZGF24+dDeJIqOWNi1a390aW5qNhXNDvMnTJtB3scSAWXqaLTQeq0p4LN3pIX5VW8DC9slDUDKiDMRQ10zzCjDVwJ7CIRw6GbO7aj2KiszBLVBfwWFfS4X8nscKtgUmS70ZpVwAMiUAwewALotxAeYyq/ede9YGdOJ4ehbOqwULD27QbpylTk0sU64Yexkowa4YBC1tk5pjil7S4xLPZXunJ+In5za/lNyyzu8zSk9AZHxGffZU="
+  on:
+    repo: pyarmak/OPAL-Helper-Host
+    tags: true # The deployment happens only if the commit has a tag.
+- provider: pages
+  local_dir: docs
+  skip_cleanup: true
+  github_token:
     secure: "mUdL4JeQW2ihqE3nIGESJtvRhs/dp1tsy+sfq20KPv23XW3HERHGCqLBdggsl0fElozmRzCvXJd86zWzOLH0KVQWgN4nnpREhxJvqoZgCTxKyb5egSepgUHOO4D5BEV+u2UJoltD7j999CumyHDaOl6UYDMBmeYPgOVKkXqdZHE4xe3jD4fxnKfSDOOIugVsnzUctId40lR3PZjqaiuPX57tbNtHDPa90J94a9nWN9pbBSQk0Q2sr/T+VcjMud7g+hD/FGgOcUcCWPV1eCTXbsIk3xZOr/OwB3sUc8TgXStK5H1LSrEdkIJiX5mrFhX+0CjfQS+tWtBswKS3JKnSe0i2g6KQ823cmkCotw0zOgwyBqx3mbluTQDpMe4HIpVWUbZ4KNy6BpurOuDe1/CsPWJ9wgzLU7MpvIlyqpl4UiPK7fPRo7/qK4w2EZGF24+dDeJIqOWNi1a390aW5qNhXNDvMnTJtB3scSAWXqaLTQeq0p4LN3pIX5VW8DC9slDUDKiDMRQ10zzCjDVwJ7CIRw6GbO7aj2KiszBLVBfwWFfS4X8nscKtgUmS70ZpVwAMiUAwewALotxAeYyq/ede9YGdOJ4ehbOqwULD27QbpylTk0sU64Yexkowa4YBC1tk5pjil7S4xLPZXunJ+In5za/lNyyzu8zSk9AZHxGffZU="
   on:
     repo: pyarmak/OPAL-Helper-Host
