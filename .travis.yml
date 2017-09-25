@@ -13,7 +13,7 @@ install:
 script:
 - go build -o "build/mac/bin/OPALhelper" src/chrome_native.go src/ffmpeg.go src/main.go
 
-before_deploy:
+after_success:
 - /usr/local/bin/packagesbuild -F . "OPAL Helper Host Application.pkgproj"
 
 deploy:
