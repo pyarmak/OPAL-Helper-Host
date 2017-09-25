@@ -37,7 +37,8 @@ func processMessage(msg []byte) {
 		cmd := exec.Command(content.Player, content.Url)
 		err := cmd.Start()
 		if err != nil {
-			panic(fmt.Sprintf("Error sending message: %v", err))
+			Send(true, fmt.Sprintf("Command error: %v", err))
+			os.Exit(1)
 		}
 		Send(false, content.Url)
 		os.Exit(0)
