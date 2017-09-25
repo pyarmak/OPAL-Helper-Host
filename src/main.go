@@ -30,8 +30,9 @@ func processMessage(msg []byte) {
 	switch 	content := DecodeMessage(msg); content.Type {
 	case "play":
 		if content.Player == "DEFAULT" {
+			content.Player = "lib/mpv/mpv"
 			if runtime.GOOS == "windows" {
-				content.Player = "mpv\\mpv.exe"
+				content.Player = "lib\\mpv\\mpv.exe"
 			}
 		}
 		cmd := exec.Command(content.Player, content.Url)
