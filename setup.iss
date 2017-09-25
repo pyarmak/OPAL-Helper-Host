@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "OPAL Helper"
-#define MyAppVersion "0.3.8"
+#define MyAppVersion "0.4.0"
 #define MyAppPublisher "Pavel Yarmak"
 
 [Setup]
@@ -32,10 +32,10 @@ Source: "lib\ffmpeg\bin\ffmpeg.exe"; DestDir: "{app}\lib\ffmpeg";
 Source: "lib\ffmpeg\licenses\*"; DestDir: "{app}\lib\ffmpeg\licenses";
 Source: "lib\ffmpeg\LICENSE.md"; DestDir: "{app}\lib\ffmpeg";
 Source: "lib\ffmpeg\README.txt"; DestDir: "{app}\lib\ffmpeg";
-Source: "lib\mpv\Windows\*"; DestDir: "{app}\mpv";
-Source: "lib\mpv\LICENSE"; DestDir: "{app}\mpv";
-Source: "lib\mpv\Copyright"; DestDir: "{app}\mpv";
-Source: "lib\mpv\README.txt"; DestDir: "{app}\mpv";
+Source: "lib\mpv\Windows\*"; DestDir: "{app}\lib\mpv";
+Source: "lib\mpv\LICENSE"; DestDir: "{app}\lib\mpv";
+Source: "lib\mpv\Copyright"; DestDir: "{app}\lib\mpv";
+Source: "lib\mpv\README.txt"; DestDir: "{app}\lib\mpv";
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 Source: "build\windows\install_host.bat"; DestDir: "{app}"
 Source: "build\windows\uninstall_host.bat"; DestDir: "{app}"
