@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
+# OPAL Helper
+OPAL Helper was designed to aid medical students at the University of Manitoba
+by augmenting the [Online Portal for Advanced Learning](https://opal.med.umanitoba.ca).
 
 # Notice
 > You **MUST** have the host application installed on your computer in order to use the browser extension.
-
-OPAL Helper was designed to aid medical students at the University of Manitoba
-by augmenting the [Online Portal for Advanced Learning](https://opal.med.umanitoba.ca).
 
 # Motivation
 One faithful autumn evening in 2020, while avoiding watching lecture videos,
