@@ -2,14 +2,16 @@
 layout: default
 ---
 # OPAL Helper
-OPAL Helper was designed to aid medical students at the University of Manitoba
+[OPAL Helper](https://github.com/pyarmak/OPAL-Helper-Extension)
+is a Google chrome extension and companion cross-platform host application
+designed to aid medical students at the University of Manitoba
 by augmenting the [Online Portal for Advanced Learning](https://opal.med.umanitoba.ca).
 
 # Notice
 > You **MUST** have the host application installed on your computer in order to use the browser extension.
 
 # Motivation
-One faithful autumn evening in 2020, while avoiding watching lecture videos,
+One fateful autumn evening in 2020, while avoiding watching lecture videos,
 I got fed up with OPAL's inexplicable usage of the deprecated VLC npapi plugin.
 So, as any (un)reasonable medical student would, I went ahead and wrote a
 [Google chrome](https://www.google.com/chrome/browser/desktop/index.html)
