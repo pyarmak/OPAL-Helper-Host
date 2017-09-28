@@ -36,12 +36,15 @@ Source: "lib\mpv\Windows\*"; DestDir: "{app}\lib\mpv";
 Source: "lib\mpv\LICENSE"; DestDir: "{app}\lib\mpv";
 Source: "lib\mpv\Copyright"; DestDir: "{app}\lib\mpv";
 Source: "lib\mpv\README.txt"; DestDir: "{app}\lib\mpv";
+Source: "lib\roboto\Licence.txt"; DestDir: "{app}\lib\roboto";
+Source: "lib\roboto\Roboto-Regular.ttf"; DestDir: "{app}\lib\roboto";
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 Source: "build\windows\install_host.bat"; DestDir: "{app}"
 Source: "build\windows\uninstall_host.bat"; DestDir: "{app}"
 Source: "build\windows\com.opal.helper-win.json"; DestDir: "{app}"
 Source: "LICENSE.txt"; DestDir: "{app}"
 Source: "README.md"; DestDir: "{app}"
+Source: "build\copyright.txt"; DestDir: "{app}"
 
 [Icons]
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
