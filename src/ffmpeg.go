@@ -6,8 +6,11 @@ import (
     "strings"
 	"os"
 	"os/exec"
-	"io"
 	"runtime"
+	"time"
+	"io/ioutil"
+	"io"
+	"regexp"
 )
 
 var duration = 0
@@ -61,13 +64,25 @@ func getRatio(res string) {
     }
 }
 
-func FfmpegDownload(url string, output string, errorMsg string) {
+func FfmpegDownload(url string, username string, output string, errorMsg string) {
 	os.Remove(output)
 	ffmpeg := "lib/ffmpeg/ffmpeg"
 	if runtime.GOOS == "windows" {
 		ffmpeg = "lib\\ffmpeg\\ffmpeg.exe"
 	}
-	cmd := exec.Command(ffmpeg, "-i", url, "-bsf:a", "aac_adtstoasc", "-acodec", "copy", "-vcodec", "copy", output)
+	file, err := ioutil.ReadFile("copyright.txt")
+	if err != nil {
+		Send(true, fmt.Sprintf(errorMsg, err))
+		os.Exit(1)
+	}
+	disclaimer := fmt.Sprintf(string(file), username, time.Now().Year())
+	re := regexp.MustCompile(`\r?\n`)
+	disclaimer = re.ReplaceAllString(disclaimer, " ")
+	watermark := fmt.Sprintf("drawtext='text=%v:expansion=normal:fontfile=lib/roboto/Roboto-Regular.ttf:y=h-line_h-10:x=w-mod(max(t-4.5\\,0)*(w+tw)/255.5\\,(w+tw)):fontcolor=white:fontsize=40:shadowx=2:shadowy=2'", disclaimer)
+	args := strings.Fields(fmt.Sprintf("-i %v -vf -bsf:a aac_adtstoasc -acodec copy %v", url, output))
+	args = append(args[:3], append([]string{watermark}, args[3:]...)...)
+	cmd := exec.Command(ffmpeg, args...)
+	//Send(true, strings.Join(cmd.Args, " "))
 	stderr, _ := cmd.StderrPipe()
 	cmd.Start()
 	oneByte := make([]byte, 8)

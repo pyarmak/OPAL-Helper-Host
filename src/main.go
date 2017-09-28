@@ -56,7 +56,7 @@ func processMessage(msg []byte) {
 			os.MkdirAll(content.Dest, os.ModePerm)
 		}
 		output := path.Join(content.Dest, content.Name)
-		FfmpegDownload(content.Url, output, "ffmpeg error - %v")
+		FfmpegDownload(content.Url, content.Username, output, "ffmpeg error - %v")
 		os.Exit(0)
 	default:
 		Send(true, "Received an unknown action type.")

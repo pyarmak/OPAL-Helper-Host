@@ -1,0 +1,7 @@
+This video was downloaded by %v.
+WARNING %v. All rights Reserved. This video and its contents are covered
+and protected by the copyright of the University of Manitoba and/or the presenter
+and are provided to you\, subject to the OPAL Terms of Use\, solely for your non-commercial
+personal academic or administrative use. Except as otherwise provided under Canadian copyright
+law\, this video and its content may not be copied\, published\, distributed\, altered or re-posted in
+any form or by any means\, electronic or otherwise\, without the prior written permission of the copyright owner.
