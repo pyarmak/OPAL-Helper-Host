@@ -13,6 +13,7 @@ type Message struct {
 	Url string
 	Dest string
 	Name string
+	Username string
 }
 
 type Response struct {
