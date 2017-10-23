@@ -38,6 +38,8 @@ Source: "lib\mpv\Copyright"; DestDir: "{app}\lib\mpv";
 Source: "lib\mpv\README.txt"; DestDir: "{app}\lib\mpv";
 Source: "lib\roboto\Licence.txt"; DestDir: "{app}\lib\roboto";
 Source: "lib\roboto\Roboto-Regular.ttf"; DestDir: "{app}\lib\roboto";
+Source: "lib\converter\OfficeToPDF.exe"; DestDir: "{app}\lib\converter";
+Source: "lib\converter\LICENSE.md"; DestDir: "{app}\lib\converter";
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 Source: "build\windows\install_host.bat"; DestDir: "{app}"
 Source: "build\windows\uninstall_host.bat"; DestDir: "{app}"
