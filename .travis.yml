@@ -8,7 +8,7 @@ go:
 install:
 - wget http://s.sudre.free.fr/Software/files/Packages.dmg
 - hdiutil attach Packages.dmg
-- sudo installer -pkg "/Volumes/Packages 1.1.3/Install Packages.pkg" -target "/"
+- sudo installer -pkg "/Volumes/Packages 1.2/Install Packages.pkg" -target "/"
 
 script:
 - go build -o "build/mac/bin/OPALhelper" src/chrome_native.go src/ffmpeg.go src/main.go
