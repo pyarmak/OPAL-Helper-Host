@@ -25,7 +25,7 @@ for easy access through the extension's popup.
 # Features
 - Allows streaming session videos using an external player.
     - Comes with a built in [mpv player](https://mpv.io/).
-- Allows downloading of session videos for offline viewing.
+- ~~Allows downloading of watermarked session videos for personal offline viewing.~~ **Unavailable per university policy.**
 - Provides a "Recently Viewed" popup (accessed by clicking the extension icon)
     - Clicking on any of the rows will take you to the session's main page.
     - Clicking on the play icon on the right will launch the session video directly.
