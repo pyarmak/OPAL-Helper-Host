@@ -29,6 +29,7 @@ for easy access through the extension's popup.
 - Provides a "Recently Viewed" popup (accessed by clicking the extension icon)
     - Clicking on any of the rows will take you to the session's main page.
     - Clicking on the play icon on the right will launch the session video directly.
+- Allows downloading properly labled and automatically organized session resources.
 
 By the way, you can also go to the OPAL homepage by clicking on the title of the popup
 (OPAL Helper).
